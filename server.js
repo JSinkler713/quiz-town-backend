@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const routes = require('./routes')
 const db = require('./models');
+const ctrl = require('./controllers')
 // Middleware - JSON parsing
 app.use(express.json())
 
@@ -17,7 +18,7 @@ app.use(cors(corsOptions))
 // API routes
 //app.use('/api/v1/quiz', routes.quizzes)
 
-
+/*
 const show = (req,res) => {
   db.Quiz.find( {name: req.params.name }, (err, foundQuiz)=> {
     res.status(200).json({ quiz: foundQuiz });
@@ -30,10 +31,10 @@ const create = (req, res) => {
     res.status(200).json( { quiz: createdQuiz } )
   });
 }
-
+*/
 // quiz routes
-app.post('/api/v1/quiz', create);
-app.get('/api/v1/quiz/:name', show);
+app.post('/api/v1/quiz', ctrl.quizzes.create);
+app.get('/api/v1/quiz/:name', ctrl.quizzes.show);
 
 
 // Listening
