@@ -14,7 +14,7 @@ mongoose.connect(connectionString, configOptions)
     .catch(err => console.log(`MongoDB connection error: ${err}`))
 
 module.exports = {
-    Quiz: require('./quiz')
+    Quiz: require('./quiz'),
     Question: require('./question')
 }
 
