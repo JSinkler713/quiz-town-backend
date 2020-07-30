@@ -11,8 +11,17 @@ const create = (req, res) => {
     res.status(200).json( { quiz: createdQuiz } )
   });
 }
-
+const index = async (req, res) => {
+  try {
+    const quizzes = await db.Quiz.find()
+    console.log(quizzes)
+    res.status(200).json( {quizzes} );
+  } catch (err) {
+    res.send(err);
+  }
+}
 module.exports = {
   create: create,
-  show: show
+  show: show,
+  index: index
 }
