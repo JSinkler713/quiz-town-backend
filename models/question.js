@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
+const uniqueValidator = require('mongoose-unique-validator');
 
 const QuestionSchema = new Schema({
   prompt: { type: String, required: true, unique: true },
@@ -13,6 +14,9 @@ const QuestionSchema = new Schema({
     required: true,
   }
 })
+
+// use uniqueValidator
+QuestionSchema.plugin(uniqueValidator);
 
 const Question = mongoose.model('Question', QuestionSchema);
 
