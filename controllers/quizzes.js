@@ -8,7 +8,8 @@ const show = (req,res) => {
 const create = (req, res) => {
   db.Quiz.create(req.body, (err, createdQuiz) => {
     if (err) console.log('error', err);
-    res.status(200).json( { quiz: createdQuiz } )
+    console.log('just created', createdQuiz)
+    res.status(200).json({ quiz: createdQuiz })
   });
 }
 const index = async (req, res) => {
