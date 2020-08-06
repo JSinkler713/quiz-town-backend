@@ -3,10 +3,10 @@ const Schema = mongoose.Schema;
 const uniqueValidator = require('mongoose-unique-validator');
 
 const QuestionSchema = new Schema({
-  prompt: { type: String, required: true, unique: true },
+  prompt: { type: String, required: true },
   answers: [{
       text: String,
-      correct: Boolean
+      correct: Boolean,
     }],
   quiz: {
     type: Schema.Types.ObjectId,

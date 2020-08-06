@@ -1,1 +1,5 @@
-module.exports = { quiz: require('./quizzes') }
+module.exports = {
+  quiz: require('./quizzes'),
+  question: require('./questions')
+}
+
