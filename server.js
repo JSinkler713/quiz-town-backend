@@ -1,4 +1,7 @@
 const express = require('express')
+// require dotenv, will look for .env file in root of project
+require('dotenv').config()
+console.log(process.env.FAKE)
 const app = express()
 const routes = require('./routes')
 const db = require('./models');
@@ -18,6 +21,7 @@ app.use(cors(corsOptions))
 //app.post('/api/v1/quiz', ctrl.quizzes.create);
 //app.get('/api/v1/quiz/:name', ctrl.quizzes.show);
 app.use('/api/v1/quiz', routes.quiz)
+app.use('/api/v1/question', routes.question)
 
 // Listening
 app.listen(4000, ()=> console.log('server running on port 4000'))
