@@ -14,7 +14,7 @@ const create = (req, res) => {
 }
 const index = async (req, res) => {
   try {
-    const quizzes = await db.Quiz.find()
+    const quizzes = await db.Quiz.find().populate('questions')
     console.log(quizzes)
     res.status(200).json( {quizzes} );
   } catch (err) {
