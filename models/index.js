@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-
+// connect to mongoAtlas
 const connectionString = process.env.DATABASE_URL || "mongodb://localhost:27017/quiztown"
 
 const configOptions = {
