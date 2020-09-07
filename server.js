@@ -17,9 +17,7 @@ const corsOptions = {
 }
 
 app.use(cors(corsOptions))
-// quiz routes
-//app.post('/api/v1/quiz', ctrl.quizzes.create);
-//app.get('/api/v1/quiz/:name', ctrl.quizzes.show);
+
 app.use('/api/v1/quiz', routes.quiz)
 app.use('/api/v1/question', routes.question)
 
