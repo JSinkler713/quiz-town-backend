@@ -12,8 +12,5 @@ const QuizSchema = new Schema({
 // use uniqueValidator
 QuizSchema.plugin(uniqueValidator);
 
-
-
 const Quiz = mongoose.model('Quiz', QuizSchema);
-
 module.exports = Quiz;
